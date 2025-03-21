@@ -1,0 +1,913 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header styles */
+  .header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    position: absolute; /* Перемещаем header поверх hero-section */
+    top: 0;
+    left: 0;
+    width: 100%; /* Растягиваем header на всю ширину */
+    z-index: 10; 
+  }
+  
+  .header {
+    width: 1000px;
+    height: 70px;
+    background-color: #000;
+    border-radius: 40px;
+    box-shadow: 0px 4px 12px 2px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  .navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navigation li {
+    margin: 0 60px;
+  }
+  
+  .navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .navigation a.active {
+    color: white;
+    position: relative;
+  }
+  
+  .navigation a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  }
+  
+  .dashboard-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(30, 30, 30, 0.5);
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 8px 20px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+  
+  /* Hero section styles */
+  .hero-section {
+    width: 100%;
+    height: 100vh;
+    background-image: url('./img/gb__field.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: #000;
+    padding: 0 20px;
+  }
+  
+  .badge {
+    width: 156px;
+    height: 45px;
+    display: flex; /* Flexbox для выравнивания */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 2px 9.5px 0px rgba(0, 0, 0, 0.20);
+    margin-bottom: 30px;
+    gap: 8px; /* Расстояние между иконкой и текстом */
+  }
+  .badge img {
+    width: 18px; /* Размер иконки */
+    height: 18px;
+  }
+  
+  
+  .badge span {
+    color: var(--green, #00886D);
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    display: flex;
+    align-items: center; /* Центрирование текста и иконки */
+  }
+  
+  
+  .hero-content {
+    max-width: 800px;
+  }
+  
+  .hero-content h1 {
+    display: flex; /* Используем Flexbox */
+    flex-direction: column; /* Направление содержимого */
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+    width: 100%; /* Убедитесь, что ширина адаптивна */
+    height: auto; /* Убираем фиксированную высоту */
+    color: var(--black, #000);
+    text-align: center; /* Центрирование текста */
+    white-space: nowrap; /* Запрещаем перенос текста */
+  
+    /* text1__main */
+    font-family: Inter, sans-serif;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 80px; /* 106.667% */
+    letter-spacing: -1.638px;
+  }
+  
+  .hero-content p {
+    display: flex; /* Используем Flexbox */
+    width: 937px;
+    height: 70px;
+    flex-direction: column; /* Направление содержимого */
+    justify-content: center; /* Центрирование по вертикали */
+    flex-shrink: 0; /* Запрещаем сжатие */
+    color: #484B55;
+    text-align: center; /* Центрирование текста */
+  
+    /* text5__gray__sec1 */
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.8px; /* 124% */
+  }
+  
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 20px 34.487px 20.2px 34px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: var(--white, #FFF);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20.8px;
+  }
+  
+  .btn-dark {
+    background-color: #000;
+    color: white;
+  }
+  
+  .btn-light {
+    background-color: white;
+    color: #000;
+    border: 1px solid #ddd;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 1024px) {
+    .header {
+      width: 90%;
+    }
+    
+    .hero-content h1 {
+      font-size: 36px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .header {
+      width: 95%;
+      height: auto;
+      min-height: 60px;
+      padding: 10px 20px;
+    }
+    
+    .navigation li {
+      margin: 0 15px;
+    }
+    
+    .hero-content h1 {
+      font-size: 40px;
+      line-height: 60px;
+    }
+    
+    .hero-content p {
+      width: 90%; /* Уменьшаем ширину для мобильных */
+      font-size: 16px; /* Уменьшаем размер шрифта */
+      line-height: 20px;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 50px;
+      line-height: 60px;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  /* Стили для бургер-меню на мобильных устройствах */
+@media screen and (max-width: 768px) {
+  /* Скрываем навигацию по умолчанию */
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 70px; /* можно скорректировать в зависимости от высоты header */
+    left: 0;
+    right: 0;
+    background-color: #000;
+    flex-direction: column;
+    padding: 10px 0;
+    z-index: 10;
+  }
+  
+  /* При добавлении класса active показываем навигацию */
+  .navigation.active {
+    display: flex;
+  }
+  
+  /* Показываем бургер-иконку */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+  
+  /* Определяем стили для отдельных полосок бургера */
+  .menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  
+  /* Дополнительные настройки для header, если нужно */
+  .header {
+    position: relative;
+  }
+  
+  /* Скрываем навигацию в десктопной версии, если потребуется */
+  .navigation ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navigation li {
+    margin: 10px 0;
+  }
+}
+/* --- Базовая настройка навигации (бургер-меню) --- */
+@media screen and (max-width: 768px) {
+  /* Изначально скрываем меню */
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 70px; /* подгоните под высоту вашего header */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    padding: 20px 0;
+    z-index: 999; /* чтобы меню точно было поверх контента */
+    
+    /* Для анимации появления через прозрачность и смещение */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Показываем меню при классе .active */
+  .navigation.active {
+    display: flex;  /* сначала делаем видимым (иначе анимация не сработает) */
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Сами ссылки внутри навигации — чуть больше отступы и белый цвет */
+  .navigation ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navigation li {
+    margin: 0;
+  }
+
+  .navigation a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  /* При наведении можно чуть подсветить ссылку */
+  .navigation a:hover {
+    color: #ccc;
+  }
+
+  /* --- Стили для иконки бургера --- */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Полоски бургера */
+  .menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+
+  /*
+    Когда меню открыто, мы вешаем класс .opened на .menu-toggle:
+    - первая и третья полоски вращаются, превращаясь в «крестик»
+    - вторая полоска становится прозрачной
+  */
+  .menu-toggle.opened .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.opened .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.opened .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+:root {
+  --black: #000;
+}
+
+.features-section {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+.feature-container {
+  display: flex;
+  flex-wrap: wrap;        /* разрешаем перенос */
+  justify-content: center;/* выравниваем по центру, можно space-between и т.д. */
+  gap: 0px;
+  max-width: 1489px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.feature-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  margin: 0;
+}
+
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid #e6e6e6;
+}
+
+.feature-title {
+  color: var(--black, #000);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px; /* 112.5% */
+  margin-bottom: 12px;
+}
+
+.feature-desc {
+  color: var(--black, #000);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px; /* 112.5% */
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .feature-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-section {
+    padding: 40px 15px;
+  }
+  
+  .feature-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .feature-desc {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.how-does-it-work {
+  width: 100%;
+  background-color: #fff;     /* или другой фон */
+  padding: 60px 20px;         /* отступы секции сверху/снизу, по бокам */
+  /* Если хотите, чтобы блок по вертикали занимал почти весь экран, 
+     можете добавить что-то вроде min-height: 80vh; 
+     и align-items: center; (через flex), но это уже на ваш вкус */
+}
+
+.how-does-it-work-container {
+  max-width: 1200px;          /* ограничиваем максимальную ширину */
+  margin: 0 auto;             /* выравниваем по центру */
+  
+  display: flex;
+  justify-content: space-between;
+  /* Выберите один вариант:
+     - align-items: center;  (заголовок и текст выравниваются по центру по вертикали)
+     - align-items: flex-start; (выравнивание по верхней линии) */
+  align-items: center;
+  gap: 40px;                  /* расстояние между колонками */
+}
+
+.left-col {
+  /* Фиксируем примерную ширину левой колонки 
+     (чтобы заголовок не "прыгал" и не сжимал текст справа) */
+  flex: 0 0 35%; /* Можно 30% или 40% — подберите визуально */
+}
+
+.left-col h2 {
+  color: var(--black, #000);
+  font-family: 'Inter', sans-serif;
+  font-size: 75px;           /* по вашим требованиям */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 80px;         /* 106.667% */
+  letter-spacing: -1.638px;
+  margin: 0;                 /* убираем стандартный отступ, если нужно */
+}
+
+.right-col {
+  /* Задаём оставшееся пространство правой колонке */
+  flex: 1;
+  /* При желании можно ограничить max-width, чтобы текст не был слишком широким */
+  max-width: 600px;
+}
+
+.right-col p {
+  color: var(--black, #000);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px; 
+  line-height: 26px;
+  margin: 0; 
+}
+
+/* Адаптив под мобильные: колонки становятся вертикальными */
+@media (max-width: 768px) {
+  .how-does-it-work-container {
+    flex-direction: column;
+    align-items: flex-start; /* или center, если хотите центрировать по горизонтали */
+  }
+  
+  .left-col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .left-col h2 {
+    font-size: 48px; 
+    line-height: 54px;
+    letter-spacing: -1px;
+  }
+}
+.sec5 {
+  width: 100%;
+  padding: 60px 20px;      /* Отступы секции */
+  background-color: #fff;  /* Фон, если нужен */
+}
+
+/* Общий контейнер, где две колонки */
+.sec5__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Каждая колонка */
+.sec5__column {
+  flex: 1; /* равная ширина */
+}
+
+/* Ряд, где иконка + заголовок */
+.sec5__heading-row {
+  display: flex;
+  align-items: center; /* выравниваем по вертикали */
+  gap: 10px;          /* расстояние между иконкой и текстом */
+  margin-bottom: 20px;/* отступ снизу под заголовком */
+}
+
+/* Сама иконка */
+.sec5__icon {
+  width: 55px;
+  height: 55px;
+}
+
+/* Заголовок */
+.sec5__title {
+  color: var(--black__sec3, #0D0D12);
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 52.6px; /* ~84.583% относительно 48px */
+  margin: 0;
+}
+
+/* Описание */
+.sec5__desc {
+  color: var(--black__sec3, #0D0D12);
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px; /* 140% */
+  margin: 0 0 20px;
+}
+
+/* Зелёный текст внутри описания */
+.sec5__desc--green {
+  color: var(--green__text, #0D6F62);
+}
+
+/* Адаптив: колонки друг под другом на узких экранах */
+@media (max-width: 768px) {
+  .sec5__container {
+    flex-direction: column;
+  }
+  
+  .sec5__title {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  
+  .sec5__desc {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+.mission-section {
+  width: 100%;
+  padding: 80px 20px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.mission-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-heading {
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.mission-heading h2 {
+  font-family: Inter, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #000;
+  margin: 0;
+}
+
+/* -- Контейнер, где слева текст+стрелка, справа галерея -- */
+.help-container {
+  display: flex;
+  align-items: flex-start; /* Выровнять по верхнему краю */
+  gap: 30px;              /* Расстояние между блоком текста и галереей */
+  flex-wrap: wrap;        /* Чтобы на очень узких экранах переносилось */
+}
+
+/* -- Текст и стрелка в одной строке -- */
+.help-text-arrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Если хотите чуть «опустить» или «поднять» этот блок 
+     относительно картинок, добавьте margin-top. Например:
+     margin-top: 10px; */
+}
+
+.help-text {
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+}
+
+.arrow-icon img {
+  height: 24px;
+}
+
+/* -- Галерея изображений -- */
+.image-gallery {
+  display: flex;
+  gap: 20px;          /* Расстояние между картинками */
+  align-items: flex-start;
+  flex-wrap: nowrap;  /* или wrap, если хотите перенос на узких экранах */
+}
+
+/* -- Каждая карточка -- */
+.gallery-image {
+  flex: none;
+  /* По умолчанию пусть будут 180×240 */
+  width: 180px;
+  height: 240px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Первая картинка шире (например, 220×240) */
+.gallery-image:first-child {
+  width: 260px;
+  height: 240px; /* можно оставить прежней, если пропорции устраивают */
+}
+
+
+/* Картинка внутри */
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Лёгкий эффект при наведении */
+.gallery-image:hover img {
+  transform: scale(1.05);
+}
+
+/* -- Адаптив под планшеты/мобильные -- */
+@media (max-width: 992px) {
+  .mission-heading h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-section {
+    padding: 50px 15px;
+  }
+  
+  .mission-heading h2 {
+    font-size: 28px;
+  }
+  
+  /* Сужаем ширину, если нужно */
+  .help-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* Галерея уходит ниже текста */
+  .image-gallery {
+    margin-top: 20px;
+  }
+  
+  .gallery-image {
+    width: 160px;
+    height: 220px;
+  }
+  
+  .gallery-image:first-child {
+    width: 180px;
+    height: 220px;
+  }
+}
+.features-accordion-section {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.features-accordion-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 30px 0;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.item-number {
+  color: #a0a0a0;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-right: 15px;
+  width: 30px;
+}
+
+.item-title {
+  font-family: Inter;
+  font-size: 50px;
+  font-weight: 500;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.toggle-btn {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggle-btn.plus .icon::before,
+.toggle-btn.plus .icon::after {
+  content: '';
+  position: absolute;
+  background-color: #000;
+}
+
+.toggle-btn.plus .icon::before {
+  width: 24px;
+  height: 2px;
+  top: 11px;
+  left: 0;
+}
+
+.toggle-btn.plus .icon::after {
+  width: 2px;
+  height: 24px;
+  top: 0;
+  left: 11px;
+}
+
+.toggle-btn.minus .icon::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  top: 11px;
+  left: 0;
+}
+
+.accordion-content {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content.hidden {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  display: flex;
+  padding: 30px 45px 0;
+  gap: 30px;
+}
+
+.content-text {
+  flex: 1;
+}
+
+.content-text p {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+.content-image {
+  flex: 1;
+}
+
+.content-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Active state */
+.accordion-item.active .accordion-header {
+  margin-bottom: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .content-wrapper {
+    flex-direction: column;
+    padding: 20px 30px 0;
+  }
+  
+  .content-image {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-accordion-section {
+    padding: 50px 15px;
+  }
+  
+  .item-title {
+    font-size: 22px;
+  }
+  
+  .content-wrapper {
+    padding: 20px 0 0;
+  }
+}
